@@ -13,7 +13,7 @@ const hasAccess = isAdmin || isLoggedIn;
 const isTruthy = message < anotherMessage;
 const isFalsy = !isLoggedIn;
 const isNotTrue = typeof message == 'number';
-const isTrue = typeof message == 'boolean';
+const isTrue = typeof message !== 'boolean';
 
 
 console.log(activeUser);
