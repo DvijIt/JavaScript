@@ -1,8 +1,9 @@
 let n = 150;
 let sum = 0;
 
-for (i = 0; i <= n; i++) {
-  sum += i;
-}
+while (n > 1 ) {
+  sum += n;
+  n -= 1;
+};
 
 console.log('Result: ' + sum);
