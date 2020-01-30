@@ -6,7 +6,7 @@ const getPrimes = num => {
       if (i % j == 0) continue nextPrime;
     }
   
-    console.log( i ); // простое число
+    console.log( i );
   }
 }
 getPrimes(5)
