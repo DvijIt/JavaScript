@@ -1,8 +1,12 @@
 const findDivCount = (a, b, n) => {
   let count = 0;
-  for (i = a; i <= b; i++) {
-    if (i % n === 0) {
+  while (a <= b) {
+    if (a % n === 0) {
       count++;
+      a++;
+    }
+    else {
+      a++
     }
   }
   return count;
