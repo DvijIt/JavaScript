@@ -1,9 +1,11 @@
 const increaser = (a, index) => {
+  let sum = 0;
   if (a > index) {
-    return a * index;
+    sum = a * index;
   } else {
-    return a;
+    sum = a;
   }
+  return sum;
 }
 
 increaser(8, 6)
