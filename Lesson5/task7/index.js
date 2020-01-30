@@ -1,1 +1,1 @@
-const increaser = (a, index) => a > index ? a * index : a;
+const increaser = (a, index) => a > index ? a + index : a;
