@@ -1,8 +1,12 @@
 const getPrimes = num => {
-  for (let i = 1; i <= num; i++) {
-    if (i % 1 === 0 && i % i === 0) {
-      console.log(i);
+  nextPrime:
+  for (let i = 2; i <= num; i++) {
+  
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
     }
+  
+    console.log( i ); // простое число
   }
 }
-getPrimes(5);
+getPrimes(5)
