@@ -12,4 +12,3 @@ const getPrimes = num => {
     }
   }
 }
-getPrimes(20)
