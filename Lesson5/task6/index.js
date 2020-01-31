@@ -1,9 +1,14 @@
 const getPrimes = num => {
-  nextPrime: for (let i = 2; i <= num; i++) {
-    for (let j = 2; j < i; j++) {
-      if (i % j == 0) continue nextPrime;
+  for (let i = 2; i <= num; i++) {
+    let count = 0;
+    for (let j = 2; j <= i; j++) {
+      if (i % j) {
+        continue;
+      }
+      count += 1;
     }
-    console.log(i);
+    if (count == 1) console.log(i);
   }
+
 }
-getPrimes(5)
+getPrimes(19)
