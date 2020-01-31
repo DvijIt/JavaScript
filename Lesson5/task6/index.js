@@ -1,13 +1,15 @@
 const getPrimes = num => {
-  for (var i = 2; i <= num; i++) {
-    var count = 0;
-    for (var j = 1; j <= i; j++) {
-      if (i % j) {
-        continue;
+  for (let i = 2; i <= num; i++) {
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) {
+        break;
       }
-      count += 1;
+      console.log(i)
+      if (i == i) {
+        break;
+      }
     }
-    if (count == 2) console.log(i);
+    
   }
 }
-getPrimes(19)
+getPrimes(20);
