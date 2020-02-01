@@ -10,9 +10,6 @@ const sortDesc = array => {
   return array;
 }
 
-sortAsc(array);
-sortDesc(array);
-
 
 // const array = [4, 5, 3, 6, 2, 1, 10];
 
