@@ -8,5 +8,6 @@ function reverseArray(numbers) {
   for (let i = 0; i < numbers.length; i++) {
     arr.push(i);
   }
-  return arr.reverse();
+  arr.reverse();
+  return arr;
 }
