@@ -5,6 +5,6 @@ function reverseArray(numbers) {
   if (!Array.isArray(numbers)) {
     return null;
   }
-  arr = numbers.reverse();
-  return arr;
+  arr = numbers;
+  return arr.reverse();
 }
