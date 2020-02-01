@@ -2,5 +2,5 @@ function getArrayBounds(arr) {
   if (!Array.isArray(arr)) {
     return null;
   }
-  return [arr.lenght, arr[1], arr[arr.lenght - 1]];
+  return [arr.length, arr[0], arr[arr.length - 1]];
 }
