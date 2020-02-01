@@ -6,7 +6,7 @@ function reverseArray(numbers) {
     return null;
   }
   for (let i = 0; i < numbers.length; i++) {
-    arr.push(i);
+    arr.push(numbers[i]);
   }
   arr.reverse();
   return arr;
