@@ -4,7 +4,7 @@ const sortAsc = array => {
   array.sort((a, b) => b - a);
 }
 
-const sortAsc = array => {
+const sortDesc = array => {
   array.sort((a, b) => a - b);
 }
 
