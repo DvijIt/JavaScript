@@ -6,7 +6,7 @@ function squareArray(numbers) {
     return null;
   }
   for (let i = 0; i < numbers.length; i++) {
-    arr.push(i * i);
+    arr.push(Math.pow(numbers[i], 2));
   }
   return arr;
 }
