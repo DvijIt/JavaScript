@@ -1,9 +1,6 @@
-function getSpecialNumbers( m, n ) {
-  let arr = [];
-  for (let i = m; i <= n; i++ ) {
-    if ( i % 3 === 0 ) {
-      arr.push(i);
-    }
-  }
-  return arr;
+const flatArray = arr => {
+  const flatArray = arr.reduce((acc, elem) => {
+    return acc.concat(elem);
+  }, []);
+  return flatArray;
 }
