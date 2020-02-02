@@ -1,2 +1,5 @@
-const sortDesc = array => arr = array.sort((a, b) => b - a);
+const sortDesc = array => {
+  const arr = array.sort((a, b) => b - a);
+  return arr;
+}
   
