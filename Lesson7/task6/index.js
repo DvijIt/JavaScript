@@ -1,13 +1,7 @@
-const numbers = [11, 22, 33, 55, 66];
-
-function reverseArray(numbers) {
-  let arr = [];
-  if (!Array.isArray(numbers)) {
+const reverseArray = arr => {
+  let array = [...arr];
+  if (!Array.isArray(arr)) {
     return null;
   }
-  for (let i = 0; i < numbers.length; i++) {
-    arr.push(numbers[i]);
-  }
-  arr.reverse();
-  return arr;
+  return array.reverse();
 }

@@ -1,1 +1,0 @@
-const cloneArr = arr => [...arr];
