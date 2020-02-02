@@ -1,7 +1,8 @@
-const numbers = [11, 22, 33, 55, 66];
+const getMessagesForBestStudents = (allStudents, failedStudents) =>
+  allStudents
+  .filter(name => !failedStudents.includes(name))
+  .map(name => 'God job, ' + name);
 
-function swap(arr) {
-  const [start, ...rest] = arr;
 
-  return [...rest, start];
-}
+const allStudents = ['Ann', 'Tom', 'Bob', 'Kate'];
+const failedStudents = ['Tom', 'Bob'];
