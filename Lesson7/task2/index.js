@@ -1,5 +1,5 @@
 const sortDesc = array => {
-  const arr = array.sort((a, b) => b - a);
-  return arr;
+  const arr = array;
+  return arr.sort((a, b) => b - a);
 }
   
