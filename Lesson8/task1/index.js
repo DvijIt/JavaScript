@@ -1,5 +1,5 @@
 const transformToObject = arr => {
-  obj = {};
+  let obj = {};
   arr.forEach(el => {
     obj[el] = el;
   });
