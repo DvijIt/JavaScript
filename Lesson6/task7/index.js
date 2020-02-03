@@ -1,7 +1,7 @@
 const array = [4, 5, 3, 6, 2, 1, 10];
 
 const sortAsc = array => {
-  arr = [];
+  let arr = [];
   for (; array.length;) {
     arr.push(array.splice(array.indexOf(Math.min(...array)), 1)[0])
   }
@@ -9,7 +9,7 @@ const sortAsc = array => {
 }
 
 const sortDesc = array => {
-  arr = [];
+  let arr = [];
   for (; array.length;) {
     arr.push(array.splice(array.indexOf(Math.max(...array)), 1)[0])
   }
