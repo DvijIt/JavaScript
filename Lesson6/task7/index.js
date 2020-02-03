@@ -1,16 +1,20 @@
 const array = [4, 5, 3, 6, 2, 1, 10];
 
 const sortAsc = array => {
-  array.sort((a, b) => a - b);
-  return array;
+  arr = [];
+  for (; array.length;) {
+    arr.push(array.splice(array.indexOf(Math.min(...array)), 1)[0])
+  }
+  return arr;
 }
+console.log(sortAsc(array))
 
 const sortDesc = array => {
-  array.sort((a, b) => b - a);
-  return array;
+  arr = [];
+  for (; array.length;) {
+    arr.push(array.splice(array.indexOf(Math.max(...array)), 1)[0])
+  }
+  return arr;
 }
 
-let a = [3, 2, 1, 1, 5, 4],
-c = [];
-for (; a.length;)  { c.push(a.splice(a.indexOf(Math.min(...a)),1)[0])}
-console.log(c)
+console.log(sortDesc(array))
