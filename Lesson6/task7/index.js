@@ -7,7 +7,6 @@ const sortAsc = array => {
   }
   return arr;
 }
-console.log(sortAsc(array))
 
 const sortDesc = array => {
   arr = [];
@@ -16,5 +15,3 @@ const sortDesc = array => {
   }
   return arr;
 }
-
-console.log(sortDesc(array))
