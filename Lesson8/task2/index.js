@@ -5,10 +5,3 @@ const concatProps = obj => {
   }
   return arr;
 }
-// const obj = {
-//   name: 'John Doe',
-//   age: 17,
-//   interest: 'football'
-// }
-// const obj2 = {};
-// console.log(concatProps(obj2))
