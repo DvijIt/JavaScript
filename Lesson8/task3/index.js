@@ -1,5 +1,5 @@
   const pickProps = (obj, arr) => {
-    obj1 = {};
+    let obj1 = {};
     arr.forEach(el => {
       for (let key in obj) {
         if (key == el) {
