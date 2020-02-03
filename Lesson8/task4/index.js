@@ -1,8 +1,9 @@
-const getMessagesForBestStudents = (allStudents, failedStudents) =>
-  allStudents
-  .filter(name => !failedStudents.includes(name))
-  .map(name => 'Good job, ' + name);
-
-
-const allStudents = ['Ann', 'Tom', 'Bob', 'Kate'];
-const failedStudents = ['Tom', 'Bob'];
+const getAdults = obj => {
+  let $obj = {};
+  for (let key in obj) {
+    if (obj[key] >= 18) {
+      $obj[key] = obj[key]
+    }
+  }
+  return $obj;
+}
