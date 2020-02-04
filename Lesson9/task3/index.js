@@ -14,10 +14,11 @@ const getCustomersList = usersObject => {
   const arr = Object.values(obj);
   arr.map( (el, index) => el.id = Object.keys(obj)[index]);
   arr.sort((a, b) => a.age - b.age);
-  console.log(obj)
-  console.log(usersObject)
+  // console.log(obj)
+  // console.log(usersObject)
+  // console.log(obj === usersObject) // false;
   return arr;
 }
 
-console.log(getCustomersList(customers));
+// console.log(getCustomersList(customers));
 // console.log(customers);
