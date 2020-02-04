@@ -1,11 +1,17 @@
-const pickProps = (obj, arr) => {
-  let obj1 = {};
-  arr.forEach(el => {
-    for (let key in obj) {
-      if (key == el) {
-        obj1[el] = obj[key]
-      }
-    }
-  });
-  return obj1;
+const customers = {
+  'customer-id-1': {
+    name: 'William',
+    age: 54
+  },
+  'customer-id-2': {
+    name: 'Tom',
+    age: 17
+  }
+};
+
+const getCustomersList = usersObject => {
+  const obj = Object.values(usersObject);
+  obj.map( (el, index) => el.id = Object.keys(usersObject)[index]);
+  obj.sort((a, b) => a.age - b.age);
+  return obj;
 }
