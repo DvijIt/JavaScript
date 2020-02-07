@@ -9,8 +9,8 @@ const getRandomNumbers = (numLength, start, end) => {
   for (let i = 0; i < numLength; i++) {
     arr[i] = Math.floor(Math.random() * (start - end + 1)) + end; //Максимум и минимум включаются
   }
-  arr.filter(el => Number.isInteger(el));
-  if (arr.length == 0) {
+
+  if ((arr.find(el => Number.isInteger(el))) == undefined) {
     return null
   }
   return arr;
