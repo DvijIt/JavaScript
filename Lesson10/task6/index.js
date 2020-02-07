@@ -10,7 +10,7 @@ start = Math.ceil(start)
   // console.log(start, end)
 
   for (let i = 0; i < numLength; i++) {
-    arr[i] = parseInt(Math.random() * (start - end) + end);
+    arr[i] = Math.floor(Math.random() * (start - end) + end);
   }
   return arr;
 }
@@ -24,4 +24,4 @@ start = Math.ceil(start)
 // }
 // console.log(getRandomNumber([]))
 
-console.log(getRandomNumbers(5, -4.2, -3.2))
+console.log(getRandomNumbers(5, 4.2, 5.2))
