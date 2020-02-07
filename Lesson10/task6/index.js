@@ -7,12 +7,10 @@ const getRandomNumbers = (numLength, start, end) => {
     return null;
   }
 
-
-
   // console.log(start, end)
 
   for (let i = 0; i < numLength; i++) {
-    arr[i] = Math.floor(Math.random() * (start - end + 1) + end);
+    arr[i] = parseInt(Math.random() * (start - end) + end);
   }
   return arr;
 }
@@ -26,4 +24,4 @@ const getRandomNumbers = (numLength, start, end) => {
 // }
 // console.log(getRandomNumber([]))
 
-console.log(getRandomNumbers(5, -0.2, 1.9))
+// console.log(getRandomNumbers(5, -4.2, 1.2))
