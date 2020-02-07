@@ -6,7 +6,7 @@ const getRandomNumbers = (numLength, start, end) => {
   if (end - start < 1) {
     return null;
   }
-
+start = Math.ceil(start)
   // console.log(start, end)
 
   for (let i = 0; i < numLength; i++) {
@@ -24,4 +24,4 @@ const getRandomNumbers = (numLength, start, end) => {
 // }
 // console.log(getRandomNumber([]))
 
-// console.log(getRandomNumbers(5, -4.2, 1.2))
+console.log(getRandomNumbers(5, -4.2, -3.2))
