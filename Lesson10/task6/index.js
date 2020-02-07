@@ -16,4 +16,4 @@ const getRandomNumbers = (numLength, start, end) => {
   
 }
 
-console.log(getRandomNumbers(5, -5, 11))
+// console.log(getRandomNumbers(5, -5, 11))
