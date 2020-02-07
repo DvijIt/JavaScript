@@ -5,15 +5,14 @@ const getRandomNumbers = (numLength, start, end) => {
   let arr = [];
   start = Math.ceil(start);
   end = Math.floor(end);
-  
+
   for (let i = 0; i < numLength; i++) {
     arr[i] = Math.floor(Math.random() * (start - end + 1)) + end; //Максимум и минимум включаются
-    if (!(Number.isInteger(arr[i]))) {
-      return null
-    }
-    
   }
-  console.log(arr.length)
+  arr.filter(el => Number.isInteger(el));
+  if (arr.length == 0) {
+    return null
+  }
   return arr;
 }
 
