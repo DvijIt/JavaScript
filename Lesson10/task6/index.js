@@ -3,16 +3,16 @@ const getRandomNumbers = (numLength, start, end) => {
     return null;
   }
   let arr = [];
+  for ( let i = start; i <= end; i++) {
+    if (!(Number.isInteger(i))) {
+      return null;
+    }
+  }
 
   for (let i = 0; i < numLength; i++) {
     arr[i] = parseInt(Math.random() * (start - end) + end);
   }
-  if ((arr.find(el => Number.isInteger(el))) === undefined) {
-    return null
-  }
-  else {
-    return arr;
-  }
+  return arr;
 }
 
 
