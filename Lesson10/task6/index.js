@@ -9,11 +9,10 @@ const getRandomNumbers = (numLength, start, end) => {
   for (let i = 0; i < numLength; i++) {
     arr[i] = Math.floor(Math.random() * (start - end + 1)) + end; //Максимум и минимум включаются
   }
-
-  if ((arr.find(el => Number.isInteger(el))) == undefined) {
+  if ((arr.find(el => Number.isInteger(el))) === undefined) {
     return null
   }
   return arr;
 }
 
-console.log(getRandomNumbers(5, -5, 11))
+// console.log(getRandomNumbers(5, -5, 11))
