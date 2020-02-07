@@ -10,7 +10,7 @@ const getRandomNumbers = (numLength, start, end) => {
   }
 
   for (let i = 0; i < numLength; i++) {
-    arr[i] = parseInt(Math.random() * (start - end + 1) + end);
+    arr[i] = parseInt(Math.random() * (start - (end + 1)) + end);
   }
   return arr;
 }
