@@ -3,11 +3,9 @@ const getRandomNumbers = (numLength, start, end) => {
     return null;
   }
   let arr = [];
-  start = Math.ceil(start);
-  end = Math.floor(end);
 
   for (let i = 0; i < numLength; i++) {
-    arr[i] = parseInt(Math.random() * (start - end + 1)) + end; //Максимум и минимум включаются
+    arr[i] = parseInt(Math.random() * (start - end) + end);
   }
   if ((arr.find(el => Number.isInteger(el))) === undefined) {
     return null
@@ -20,10 +18,10 @@ const getRandomNumbers = (numLength, start, end) => {
 
 // const getRandomNumber = arr => {
 //   for ( let i = 0; i < 10; i++) {
-//     arr[i] = parseInt(Math.random());
+//     arr[i] = parseInt(Math.random() * (5 - 7) + 7);
 //   }
 //   return arr;
 // }
 // console.log(getRandomNumber([]))
 
-console.log(getRandomNumbers(5, -5, 11))
+// console.log(getRandomNumbers(5, -5, 11))
