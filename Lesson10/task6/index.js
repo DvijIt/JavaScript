@@ -11,9 +11,7 @@ const getRandomNumbers = (numLength, start, end) => {
   }
   if ((arr.find(el => Number.isInteger(el))) === undefined) {
     return null
-  }else {
-    return arr;
-  }
+  }return arr;
   
 }
 
