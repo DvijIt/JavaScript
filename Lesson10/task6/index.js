@@ -3,12 +3,15 @@ const getRandomNumbers = (numLength, start, end) => {
     return null;
   }
   let arr = [];
-if (end - start < 1) {
-  return null;
-}
+  if (end - start < 1) {
+    return null;
+  }
+
+  start = Math.floor(start);
+  end = Math.ceil(end);
 
   for (let i = 0; i < numLength; i++) {
-    arr[i] = Math.round(Math.random() * (start - end) + end);
+    arr[i] = Math.floor(Math.random() * (start - end + 1) + end);
   }
   return arr;
 }
@@ -22,4 +25,4 @@ if (end - start < 1) {
 // }
 // console.log(getRandomNumber([]))
 
-console.log(getRandomNumbers(5, 0.2, 20))
+// console.log(getRandomNumbers(5, -0.2, 2.9))
