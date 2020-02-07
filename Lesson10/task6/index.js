@@ -3,6 +3,8 @@ const getRandomNumbers = (numLength, start, end) => {
     return null;
   }
   let arr = [];
+  // start = Math.ceil(start);
+  // end = Math.floor(end);
 
   for (let i = 0; i < numLength; i++) {
     arr[i] = Math.trunc(Math.random() * (start - end + 1)) + end; //Максимум и минимум включаются
@@ -13,4 +15,4 @@ const getRandomNumbers = (numLength, start, end) => {
   return arr;
 }
 
-// console.log(getRandomNumbers(5, -5, 11))
+console.log(getRandomNumbers(5, -5, 11))
