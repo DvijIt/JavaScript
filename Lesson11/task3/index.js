@@ -1,22 +1,21 @@
-const customers = {
-  'customer-id-1': {
-    name: 'William',
-    age: 54
-  },
-  'customer-id-2': {
-    name: 'Tom',
-    age: 17
+const splitString = (text, len = 10) => {
+  if (typeof(text) !== 'string') {
+    return null
   }
-};
+  const strArr = [];
+  let startPosition = 0;
+  while (true) {
+    let chunk = text.substr(startPosition, len);
+    if (chunk.length === 0) {
+      break;
+    }
+    strArr.push(chunk.slice());
+    startPosition += len;
+  }
+  for (let i = strArr[strArr.length-1].length; i < len; i++) {
+    strArr[strArr.length-1] += '.'
+  }
 
-
-const getCustomersList = usersObject => {
-  const obj = JSON.parse(JSON.stringify(usersObject));
-  const arr = Object.values(obj);
-  arr.map( (el, index) => el.id = Object.keys(obj)[index]);
-  arr.sort((a, b) => a.age - b.age);
-  return arr;
+  return strArr;
 }
-
-// console.log(getCustomersList(customers));
-// console.log(customers);
+// console.log(splitString('seseheertdrhddhdrhdrhdrhdrddh', 4));
