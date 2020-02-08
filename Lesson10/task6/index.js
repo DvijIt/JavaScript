@@ -16,5 +16,5 @@ console.log(start, end)
   return arr;
 }
 
-// console.log(getRandomNumbers(5, 0.3, 0.5));
+console.log(getRandomNumbers(5, -0.2, 0.2));
 // console.log(getRandomNumbers(5, 4.2, 7.2));

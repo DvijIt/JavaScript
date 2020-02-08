@@ -1,4 +1,19 @@
-const getAdults = userObject =>
-  Object.entries(userObject)
-        .filter(user => user[1] >= 18)
-        .map(user => user[0]);
+const splitText = (text, len = 10) => {
+  if (typeof(text) !== 'string') {
+    return null
+  }
+  
+  const strArr = [];
+  let startPosition = 0;
+  while (true) {
+    let chunk = text.substr(startPosition, len);
+    if (chunk.length === 0) {
+      break;
+    }
+    strArr.push(chunk[0].toUpperCase() + chunk.slice(1));
+    startPosition += len;
+
+  }
+  return strArr.join('\n');
+}
+console.log(splitText(333, 4));
