@@ -2,15 +2,19 @@ const sortContacts = (contacts, isAsc = true) => {
   if (!(Array.isArray(contacts))) {
     return null;
   }
-  if (isAsc) {
-    const result = contacts.sort((a, b) => {
+  const result = contacts.sort((a, b) => {
+    if (isAsc) {
       return a.name.localeCompare(b.name)
-    });
-  }
-  else {
-    const result = contacts.sort((a, b) => {
+    }
+    else {
       return b.name.localeCompare(a.name)
-    });
-  }
+    }
+  });
   return result;
 }
+
+// const contacts = [
+//   { name: 'Tom', phoneNumber: '777-77-77' },
+//   { name: 'Ann', phoneNumber: '777-77-74' }
+// ]
+// console.log(sortContacts(contacts))
