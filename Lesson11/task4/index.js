@@ -1,4 +1,4 @@
-const countOccurrences = (fullStr, subStr) =>  typeof(subStr) === 'string' ? fullStr.match(RegExp(subStr, 'g')).length : null;
+const countOccurrences = (fullStr, subStr) =>  subStr.length > 0 ? fullStr.match(RegExp(subStr, 'g')).length : null;
 
 // const someText = 'text text text';
 // const subStr = 'te';
