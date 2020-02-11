@@ -14,7 +14,7 @@ const calc = expression => {
       break;
 
     case '*':
-      result = +a / +b;
+      result = +a * +b;
       break;
 
     case '/':
