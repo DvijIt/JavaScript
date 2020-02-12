@@ -1,1 +1,1 @@
-const increaser = (a, index) => a > index ? a + index : a;
+export const increaser = (a, index) => a > index ? a + index : a;

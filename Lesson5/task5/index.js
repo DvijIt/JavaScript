@@ -1,4 +1,4 @@
-const getSum = ( start, end ) => {
+export const getSum = ( start, end ) => {
   let sum = 0;
   for(let i = start; i <= end; i++) {
     if ( i % 2 === 0) {
@@ -7,4 +7,4 @@ const getSum = ( start, end ) => {
   }
   return sum;
 }
- getSum(2,20);
+getSum(2,20);
