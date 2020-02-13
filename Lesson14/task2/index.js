@@ -1,4 +1,4 @@
-export default createMessenger = () => {
+export default function createMessenger() {
   let message = 'just learn it!';
 
   let sender = 'Gromcode';
@@ -19,7 +19,7 @@ export default createMessenger = () => {
     setSender
   };
 }
-// const messenger1 = createMessanger();
+// const messenger1 = createMessenger();
 // messenger1.setMessage('Good job!');
 // messenger1.setSender('Gromcode')
 // messenger1.sendMessage('Bob');
