@@ -1,4 +1,4 @@
-export default createMessanger = () => {
+export default createMessenger = () => {
   let message = 'just learn it!';
 
   let sender = 'Gromcode';
