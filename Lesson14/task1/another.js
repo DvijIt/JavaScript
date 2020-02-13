@@ -1,4 +1,5 @@
-import { sendMessage, setMessage } from './index'
+
+import { sendMessage, setMessage } from './index.js'
 
 
 sendMessage('Ann');
