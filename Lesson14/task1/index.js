@@ -9,7 +9,8 @@ export function sendMessage(name) {
 export function setMessage(text) {
   message = text;
 }
+sendMessage('Ann');
 
-setMessage('Good job');
+setMessage('Good job!');
 
 sendMessage('Ann');
