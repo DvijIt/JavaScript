@@ -1,5 +1,3 @@
-'use strict';
-
 let message = 'Just learn it!';
 
 export function sendMessage(name) {
@@ -11,8 +9,6 @@ export function sendMessage(name) {
 export function setMessage(text) {
   message = text;
 }
-
-sendMessage('Ann');
 
 setMessage('Good job');
 
