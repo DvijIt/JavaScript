@@ -12,8 +12,8 @@ export function setMessage(text) {
   message = text;
 }
 
-sendMessage(('Tom'));
+sendMessage(('Ann'));
 
-setMessage('Hello!');
+setMessage('Good job');
 
-sendMessage(('Tom'));
+sendMessage(('Ann'));
