@@ -1,23 +1,25 @@
  export function createLogger() {
-  let memory;
+  let warn;
+  let error;
+  let log;
 
   function warn(warn) {
-    memory = warn;
+    warn = warn;
   }
 
   function error(error) {
-    memory = error;
+    error = error;
   }
 
   function log(log) {
-    memory = log;
+    log = log;
   }
 
-  function getRecords(log) {
+  function getRecords(warn, error, log) {
     return {
-      message: `[${memory}]`,
+      message: `[${}]`,
       dateTime: `[${Date()}]`,
-      type: `[${log}]`
+      type: `[${}]`
     }
   }
   return {
@@ -27,6 +29,7 @@
     getRecords
   }
 }
+
 
 // const logger = createLogger();
 
