@@ -1,33 +1,25 @@
-export default function createMessenger() {
-  let message = 'Just learn it!';
+export function createCalculator() {
+  let memory = 0;
 
-  let sender = 'Gromcode';
-  
-  function sendMessage(name) {
-    console.log(`${name}, ${message} Your ${sender}`);
-  }
-  
-  function setMessage(text) {
-    message = text;
+  function add(num) {
+    memory = num + memory;
   }
 
-  function setSender(text) {
-    sender = text;
+  function decrease(num) {
+    memory = memory - num;
+  }
+
+  function reset() {
+    memory = 0;
+  }
+
+  function getMemo() {
+    return memory;
   }
   return {
-    sendMessage,
-    setMessage,
-    setSender
-  };
+    add,
+    decrease,
+    reset,
+    get
+  }
 }
-// const messenger1 = createMessenger();
-// messenger1.sendMessage('Bob');
-// messenger1.setMessage('Good job!');
-// messenger1.setSender('Gromcode');
-// messenger1.sendMessage('Bob');
-
-// const messenger2 = createMessenger();
-// messenger2.sendMessage('Ann');
-// messenger2.setMessage('Good!');
-// messenger2.setSender('Gromcode2');
-// messenger2.sendMessage('Ann');
