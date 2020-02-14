@@ -1,4 +1,4 @@
-export function createLogger() {
+function createLogger() {
   let memory;
 
   function warn(warn) {
@@ -13,11 +13,11 @@ export function createLogger() {
     memory = log;
   }
 
-  function getRecords(warn) {
+  function getRecords(log) {
     return {
       message: `[${memory}]`,
-      dateTime: `[${Date.now()}]`,
-      type: `[${memory}]`
+      dateTime: `[${Date()}]`,
+      type: `[${log}]`
     }
   }
   return {
@@ -27,3 +27,10 @@ export function createLogger() {
     getRecords
   }
 }
+
+// const logger = createLogger();
+
+// logger.log('qwerty');
+// logger.getRecords('warn');
+
+// console.log(logger.getRecords('warn'))
