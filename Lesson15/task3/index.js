@@ -1,25 +1,32 @@
- export function createLogger() {
+function createLogger() {
   let memory = [];
 
   function warn(warn) {
-    memory.push(warn);
+    memory.push({
+      message: warn,
+      dateTime: Date(),
+      type: 'warn'
+    });
   }
 
   function error(error) {
-    memory.push(error);
+    memory.push({
+      message: error,
+      dateTime: Date(),
+      type: 'error'
+    });
   }
 
   function log(log) {
-    memory.push(log);
+    memory.push({
+      message: log,
+      dateTime: Date(),
+      type: 'log'
+    });
   }
-
+// console.log(memory)
   function getRecords(message) {
-    
-    return {
-      message: memory.filter(el => el === message),
-      dateTime: `[${Date()}]`,
-      type: memory.filter(el => el == message)
-    }
+    return memory.filter(el => el.type === message)
   }
 
   return {
@@ -32,6 +39,7 @@
 
 
 // const logger = createLogger();
-// logger.warn('warn')
-
+// logger.warn('sgsege');
+// logger.error('zxvzvxvzx');
+// logger.log('qweqqw');
 // console.log(logger.getRecords('warn'))
