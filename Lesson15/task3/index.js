@@ -4,15 +4,15 @@
   let logmemory;
 
   function warn(warn) {
-    warn = warn;
+    warnmemory = warn;
   }
 
   function error(error) {
-    error = error;
+    errormemory = error;
   }
 
   function log(log) {
-    log = log;
+    logmemory = log;
   }
 
   function getRecords(warn, error, log) {
