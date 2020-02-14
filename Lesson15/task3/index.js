@@ -1,27 +1,27 @@
- export function createLogger() {
-  let warnmemory;
-  let errormemory;
-  let logmemory;
+ function createLogger() {
+  let memory = [];
 
   function warn(warn) {
-    warnmemory = warn;
+    memory.push(warn);
   }
 
   function error(error) {
-    errormemory = error;
+    memory.push(error);
   }
 
   function log(log) {
-    logmemory = log;
+    memory.push(log);
   }
 
-  function getRecords(warn, error, log) {
+  function getRecords(message) {
+    
     return {
-      // message: `[${}]`,
-      // dateTime: `[${Date()}]`,
-      // type: `[${}]`
+      message: memory.filter(el => el == message),
+      dateTime: `[${Date()}]`,
+      type: memory.filter(el => el == message)
     }
   }
+  console.log(memory)
   return {
     warn,
     error,
@@ -31,9 +31,8 @@
 }
 
 
-// const logger = createLogger();
+const logger = createLogger();
+logger.warn('warn')
+logger.getRecords('warn');
 
-// logger.log('qwerty');
-// logger.getRecords('warn');
-
-// console.log(logger.getRecords('warn'))
+console.log(logger.getRecords())
