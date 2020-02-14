@@ -1,15 +1,29 @@
-let memory = 0;
-export function add(num) {
-  memory = num + memory;
-}
-export function decrease(num) {
-  memory = memory - num;
-}
+function createLogger() {
+  let memory = '';
 
-export function reset() {
-  memory = 0;
-}
+  function warn(warn) {
+    memory = warn;
+  }
 
-export function getMemo() {
-  return memory;
+  function error(error) {
+    memory = error;
+  }
+
+  function log(log) {
+    memory = log;
+  }
+
+  function getRecords(log) {
+    return {
+      message: `[сохраненное сообщение]`,
+      dateTime: `[время регистрации сообщения]`,
+      type: `[тип записи]`
+    }
+  }
+  return {
+    warn,
+    error,
+    log,
+    getRecords
+  }
 }
