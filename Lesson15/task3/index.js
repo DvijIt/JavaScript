@@ -1,5 +1,5 @@
 export function createLogger() {
-  let memory = '';
+  let memory;
 
   function warn(warn) {
     memory = warn;
