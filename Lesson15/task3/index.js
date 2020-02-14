@@ -1,7 +1,7 @@
  export function createLogger() {
-  // let warn;
-  // let error;
-  // let log;
+  let warnmemory;
+  let errormemory;
+  let logmemory;
 
   function warn(warn) {
     warn = warn;
