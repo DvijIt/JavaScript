@@ -1,4 +1,4 @@
- function createLogger() {
+ export function createLogger() {
   let memory = [];
 
   function warn(warn) {
@@ -16,12 +16,12 @@
   function getRecords(message) {
     
     return {
-      message: memory.filter(el => el == message),
+      message: memory.filter(el => el === message),
       dateTime: `[${Date()}]`,
       type: memory.filter(el => el == message)
     }
   }
-  console.log(memory)
+
   return {
     warn,
     error,
@@ -31,8 +31,7 @@
 }
 
 
-const logger = createLogger();
-logger.warn('warn')
-logger.getRecords('warn');
+// const logger = createLogger();
+// logger.warn('warn')
 
-console.log(logger.getRecords())
+// console.log(logger.getRecords('warn'))
