@@ -13,11 +13,11 @@ export function createLogger() {
     memory = log;
   }
 
-  function getRecords(log) {
+  function getRecords(warn) {
     return {
       message: `[${memory}]`,
-      dateTime: `[время регистрации сообщения]`,
-      type: `[тип записи]`
+      dateTime: `[${Date.now()}]`,
+      type: `[${memory}]`
     }
   }
   return {
