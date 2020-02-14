@@ -8,11 +8,11 @@ export default function createMessenger() {
   }
   
   function setMessage(text) {
-    message = text.bold();
+    message = text;
   }
 
   function setSender(text) {
-    sender = text.bold();
+    sender = text;
   }
   return {
     sendMessage,
