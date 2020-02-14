@@ -15,7 +15,7 @@ export function createLogger() {
 
   function getRecords(log) {
     return {
-      message: `[сохраненное сообщение]`,
+      message: `[${memory}]`,
       dateTime: `[время регистрации сообщения]`,
       type: `[тип записи]`
     }
