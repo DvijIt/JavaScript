@@ -20,6 +20,6 @@ export function createCalculator() {
     add,
     decrease,
     reset,
-    get
+    getMemo
   }
 }
