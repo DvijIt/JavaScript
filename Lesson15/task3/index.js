@@ -17,9 +17,9 @@
 
   function getRecords(warn, error, log) {
     return {
-      message: `[${}]`,
-      dateTime: `[${Date()}]`,
-      type: `[${}]`
+      // message: `[${}]`,
+      // dateTime: `[${Date()}]`,
+      // type: `[${}]`
     }
   }
   return {
