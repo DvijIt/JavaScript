@@ -3,28 +3,27 @@ export function createLogger() {
 
   function warn(warn) {
     memory.push({
-      message: `[${warn}]`,
+      message: warn,
       dateTime: Date(),
-      type: `[${warn}]`
+      type: 'warn'
     });
   }
 
   function error(error) {
     memory.push({
-      message: `[${error}]`,
+      message: error,
       dateTime: Date(),
-      type: `[${error}]`
+      type: 'error'
     });
   }
 
   function log(log) {
     memory.push({
-      message: `[${log}]`,
+      message: `log`,
       dateTime: Date(),
-      type: `[${log}]`
+      type: 'log'
     });
   }
-
   function getRecords(message) {
     return memory.filter(el => el.type === message);
   }
