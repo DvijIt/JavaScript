@@ -1,4 +1,4 @@
-export function createLogger() {
+function createLogger() {
   let memory = [];
 
   function warn(warn) {
@@ -25,6 +25,9 @@ export function createLogger() {
     });
   }
   function getRecords(message) {
+    if (message === undefined) {
+      return memory
+    }
     return memory.filter(el => el.type === message);
   }
 
@@ -42,4 +45,4 @@ export function createLogger() {
 // logger.error('zxvzvxvzx');
 // logger.log('qweqqw');
 // logger.log('qweqqwgggd');
-// console.log(logger.getRecords('log'))
+// console.log(logger.getRecords('qwer'))
