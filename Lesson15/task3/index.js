@@ -19,7 +19,7 @@ export function createLogger() {
 
   function log(log) {
     memory.push({
-      message: `log`,
+      message: log,
       dateTime: Date(),
       type: 'log'
     });
