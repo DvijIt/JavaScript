@@ -1,4 +1,4 @@
-function createLogger() {
+export function createLogger() {
   let memory = [];
 
   function warn(warn) {
@@ -26,7 +26,7 @@ function createLogger() {
   }
   function getRecords(message) {
     if (message === undefined) {
-      return memory
+      return memory;
     }
     return memory.filter(el => el.type === message);
   }
