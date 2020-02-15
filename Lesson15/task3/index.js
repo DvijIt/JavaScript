@@ -1,10 +1,10 @@
-export function createLogger() {
+function createLogger() {
   let memory = [];
 
   function warn(warn) {
     memory.push({
       message: warn,
-      dateTime: Date(),
+      dateTime: Date.now(),
       type: 'warn'
     });
   }
@@ -12,7 +12,7 @@ export function createLogger() {
   function error(error) {
     memory.push({
       message: error,
-      dateTime: Date(),
+      dateTime: Date.now(),
       type: 'error'
     });
   }
@@ -20,13 +20,13 @@ export function createLogger() {
   function log(log) {
     memory.push({
       message: log,
-      dateTime: Date(),
+      dateTime: Date.now(),
       type: 'log'
     });
   }
   function getRecords(message) {
     if (message === undefined) {
-      return memory;
+      return memory.sort((a, b) => b.dateTime - a.dateTime)
     }
     return memory.filter(el => el.type === message);
   }
@@ -45,4 +45,4 @@ export function createLogger() {
 // logger.error('zxvzvxvzx');
 // logger.log('qweqqw');
 // logger.log('qweqqwgggd');
-// console.log(logger.getRecords('qwer'))
+// console.log(logger.getRecords())
