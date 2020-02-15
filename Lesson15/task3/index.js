@@ -38,8 +38,8 @@ export function createLogger() {
 }
 
 
-// const logger = createLogger();
-// logger.warn('sgsege');
-// logger.error('zxvzvxvzx');
-// logger.log('qweqqw');
-// console.log(logger.getRecords('warn'))
+const logger = createLogger();
+logger.warn('sgsege');
+logger.error('zxvzvxvzx');
+logger.log('qweqqw');
+console.log(logger.getRecords('warn'))
