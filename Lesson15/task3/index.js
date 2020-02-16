@@ -1,25 +1,25 @@
 export function createLogger() {
   let memory = [];
 
-  function warn(warn) {
+  function warn(text) {
     memory.push({
-      message: warn,
+      message: text,
       dateTime: Date(),
       type: 'warn'
     });
   }
 
-  function error(error) {
+  function error(text) {
     memory.push({
-      message: error,
+      message: text,
       dateTime: Date(),
       type: 'error'
     });
   }
 
-  function log(log) {
+  function log(text) {
     memory.push({
-      message: log,
+      message: text,
       dateTime: Date(),
       type: 'log'
     });
