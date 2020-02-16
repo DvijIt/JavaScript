@@ -27,7 +27,7 @@ export function createLogger() {
   function getRecords(message) {
     if (message != undefined) {
       return memory
-        .filter(el => el.type === type)
+        .filter(el => el.type === message)
         .sort((a, b) => a.dateTime - b.dateTime);
     } else {
       return memory.sort((a, b) => a.dateTime > b.dateTime);
