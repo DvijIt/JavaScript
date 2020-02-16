@@ -1,34 +1,37 @@
 export function createLogger() {
   let memory = [];
 
-  function warn(text) {
+  function warn(warn) {
     memory.push({
-      message: text,
-      dateTime: new Date(),
-      type: 'warn'
+      message: warn,
+      dateTime: Date(),
+      type: "warn"
     });
   }
 
-  function error(text) {
+  function error(error) {
     memory.push({
-      message: text,
-      dateTime: new Date(),
-      type: 'error'
+      message: error,
+      dateTime: Date(),
+      type: "error"
     });
   }
 
-  function log(text) {
+  function log(log) {
     memory.push({
-      message: text,
-      dateTime: new Date(),
-      type: 'log'
+      message: log,
+      dateTime: Date(),
+      type: "log"
     });
   }
   function getRecords(message) {
-    if (message === undefined) {
-      return memory.sort((a, b) => b.dateTime - a.dateTime)
+    if (message != undefined) {
+      return memory
+        .filter(el => el.type === type)
+        .sort((a, b) => a.dateTime - b.dateTime);
+    } else {
+      return memory.sort((a, b) => a.dateTime > b.dateTime);
     }
-    return memory.filter(el => el.type === message);
   }
 
   return {
@@ -36,9 +39,8 @@ export function createLogger() {
     error,
     log,
     getRecords
-  }
+  };
 }
-
 
 // const logger = createLogger();
 // logger.warn('sgsege');
