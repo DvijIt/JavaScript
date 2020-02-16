@@ -4,7 +4,7 @@ export function createLogger() {
   function warn(text) {
     memory.push({
       message: text,
-      dateTime: Date(),
+      dateTime: new Date(),
       type: 'warn'
     });
   }
@@ -12,7 +12,7 @@ export function createLogger() {
   function error(text) {
     memory.push({
       message: text,
-      dateTime: Date(),
+      dateTime: new Date(),
       type: 'error'
     });
   }
@@ -20,7 +20,7 @@ export function createLogger() {
   function log(text) {
     memory.push({
       message: text,
-      dateTime: Date(),
+      dateTime: new Date(),
       type: 'log'
     });
   }
