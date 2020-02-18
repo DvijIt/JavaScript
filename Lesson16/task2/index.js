@@ -1,25 +1,9 @@
-export function createCalculator() {
-  let memory = 0;
+let arr = [];
 
-  function add(num) {
-    memory = num + memory;
-  }
-
-  function decrease(num) {
-    memory = memory - num;
-  }
-
-  function reset() {
-    memory = 0;
-  }
-
-  function getMemo() {
-    return memory;
-  }
-  return {
-    add,
-    decrease,
-    reset,
-    getMemo
-  }
+for (let i = 0; i < 10; i++) {
+    arr[i] = function() {
+        return i;
+    }
 }
+
+export { arr };
