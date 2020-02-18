@@ -11,5 +11,5 @@ export function createArrayOfFunctions(num) {
   } else {
     return null;
   }
-  
+  return arr;
 }
