@@ -12,7 +12,7 @@ const timer = {
                 this.secondsPassed = 0;
                 console.log(this.minsPassed)
             }
-        }, 500)
+        }, 5000)
         
     },
     getTime() {
