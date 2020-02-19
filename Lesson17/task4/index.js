@@ -1,13 +1,14 @@
-var foo = 1;
-
-function bar() {
-    if (!foo) {
-        let foo = 10;
+const user = {
+    firstName: 'John',
+    lastName: 'Doe',
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`
+    },
+    setFullName(fullName) {
+        let arr = fullName.split(' ');
+        this.firstName = arr[0];
+        this.lastName = arr[1];
     }
-
-    return foo;
 }
 
-var foo = bar();
-
-export default foo;
+export { user }
