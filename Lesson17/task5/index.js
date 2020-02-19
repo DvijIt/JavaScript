@@ -4,13 +4,10 @@ const timer = {
     intervalID: 0,
     startTimer() {
         this.intervalID = setInterval(() => {
-            console.log(this.secondsPassed)
-            
             this.secondsPassed += 5;
             if (this.secondsPassed === 60) {
                 this.minsPassed++;
                 this.secondsPassed = 0;
-                console.log(this.minsPassed)
             }
         }, 5000)
         
