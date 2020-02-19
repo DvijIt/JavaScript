@@ -1,15 +1,14 @@
-export function createArrayOfFunctions(num) {
-  let arr = [];
-  if (Number.isInteger(num)) {
-    for (let i = 0; i < num; i++) {
-      arr[i] = function() {
-        return i;
-      };
-    }
-    return arr;
-  } else if (num === undefined) {
-    return arr;
-  } else {
-    return null;
+function defer(func, ms) {
+  return function() {
+      setTimeout(() => func.apply(this, arguments), ms);
   }
 }
+const user = {
+  name: 'Tom',
+  sayHi() {
+      console.log(`Hi, i'am ${this.name}!`)
+  }
+}
+const deferredHi = defer(user.sayHi.bind(user), 1000);
+
+export { defer }
