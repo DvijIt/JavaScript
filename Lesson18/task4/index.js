@@ -3,7 +3,7 @@ function spy(test) {
         styFunk.calls.push([...arguments])
         return test.apply(this, arguments)
     }
-
+    spyF.calls = [];
     return spyFunk;
 };
 export { spy };
