@@ -1,12 +1,12 @@
-function spy(func) {
-  function spyF() {
-    spyF.calls.push([...arguments]);
-    return func.apply(this, arguments);
+function spy(test) {
+  function spyFunk() {
+    spyFunk.calls.push([...arguments]);
+    return test.apply(this, arguments);
   }
 
-  spyF.calls = [];
+  spyFunk.calls = [];
 
-  return spyF;
+  return spyFunk;
 }
 
 export { spy };
