@@ -1,14 +1,3 @@
-function defer(func, ms) {
-  return function() {
-      setTimeout(() => func.apply(this, arguments), ms);
-  }
+function sumOfSquares() {
+  return [...arguments].reduce((acc, el) => acc + Math.pow(el, 2), 0)
 }
-const user = {
-  name: 'Tom',
-  sayHi() {
-      console.log(`Hi, i'am ${this.name}!`)
-  }
-}
-const deferredHi = defer(user.sayHi.bind(user), 1000);
-
-export { defer }
