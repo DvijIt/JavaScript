@@ -4,9 +4,9 @@ const event = {
     { name: "Bob", email: "b@gmail.com", age: 18 }
   ],
   message: "Welcome to the party!",
-  getInvitation() {
+  getInvitations() {
     return this.guests
-      .filter(el => el.age >= 18)
+      .filter(({ age }) => age >= 18)
       .map(({ name, email }) => ({
         email,
         message: `Dear ${name}! ${this.message}`
