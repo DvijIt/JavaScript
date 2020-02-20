@@ -1,14 +1,9 @@
-const user = {
-    firstName: 'John',
-    lastName: 'Doe',
-    getFullName() {
-        return `${this.firstName} ${this.lastName}`
-    },
-    setFullName(fullName) {
-        let arr = fullName.split(' ');
-        this.firstName = arr[0];
-        this.lastName = arr[1];
+function spy(test) {
+    function spyFunk() {
+        styFunk.calls.push([...arguments])
+        return test.apply(this, arguments)
     }
-}
 
-export { user }
+    return spyFunk;
+};
+export { spy };
