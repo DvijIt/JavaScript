@@ -15,3 +15,4 @@ class Wallet {
     this._balance -= amount;
   }
 }
+export { Wallet }
