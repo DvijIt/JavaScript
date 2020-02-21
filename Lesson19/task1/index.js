@@ -1,21 +1,21 @@
 const vehicle = {
   name: 'Argo',
   move() {
-    console.log(`${name} is moving`)
+    console.log(`${this.name} is moving`)
   },
   stop() {
-    console.log(`${name} is stopped`)
+    console.log(`${this.name} is stopped`)
   }
 }
 
 const ship = {
   startMachine() {
-    console.log(`${name} lifting anchor up`);
-    move();
+    console.log(`${this.name} lifting anchor up`);
+    this.move();
   },
   startMachine() {
-    stop();
-    console.log(`${name} lifting anchor down`);
+    this.stop();
+    console.log(`${this.name} lifting anchor down`);
   },
   __proto__: vehicle
 }
