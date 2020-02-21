@@ -38,3 +38,5 @@ class UsserRepository {
     return this._users.find(el => el.id === id);
   }
 }
+
+export { User, UserRepository }
