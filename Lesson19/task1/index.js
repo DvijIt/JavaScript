@@ -1,5 +1,4 @@
 const vehicle = {
-  name: 'Argo',
   move() {
     console.log(`${this.name} is moving`)
   },
@@ -9,15 +8,18 @@ const vehicle = {
 }
 
 const ship = {
+  name: 'Argo',
   startMachine() {
     console.log(`${this.name} lifting anchor up`);
     ship.move();
   },
-  startMachine() {
+  stopMachine() {
     ship.stop();
     console.log(`${this.name} lifting anchor down`);
   },
   __proto__: vehicle
 }
+
+console.log(ship)
 
 export { vehicle, ship }
