@@ -1,5 +1,10 @@
 function getOwnProps(obj) {
-    return Object.keys(obj);
+  const objProps = [];
+  for (props in obj) {
+    if (obj.hasOwnProperty(prop) && typeof obj[prop] !== "function") {
+      objProps.push(prop);
+    }
+  }
+  return objProps;
 }
-
-export {getOwnProps}
+export { getOwnProps };
