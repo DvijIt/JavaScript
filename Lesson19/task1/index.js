@@ -14,7 +14,7 @@ const ship = {
     ship.move();
   },
   stopMachine() {
-    ship.stop();
+    ship.stop(),
     console.log(`${this.name} lifting anchor down`);
   },
   __proto__: vehicle
