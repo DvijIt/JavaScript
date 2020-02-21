@@ -18,6 +18,7 @@ User.prototype.setAge = function(age) {
     return false;
   }
   if (age > 0 && age < 25) {
+    this.age = age;
     return age;
   }
 };
