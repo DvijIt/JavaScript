@@ -3,7 +3,7 @@ const vehicle = {
     console.log(`${this.name} is moving`)
   },
   stop() {
-    console.log(`${this.name} is stopped`)
+    console.log(`${this.name} stopped`)
   }
 }
 
@@ -14,7 +14,7 @@ const ship = {
     ship.move();
   },
   stopMachine() {
-    ship.stop(),
+    ship.stop();
     console.log(`${this.name} lifting anchor down`);
   },
   __proto__: vehicle
