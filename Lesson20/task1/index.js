@@ -19,7 +19,7 @@ class User {
     return age;
   };
 }
-User.createEmpty()
-// export {
-//   User
-// }
+
+export {
+  User
+}
