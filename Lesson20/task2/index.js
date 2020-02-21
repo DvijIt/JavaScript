@@ -1,23 +1,29 @@
 class Vehicle {
+  constructor(name, hasWheels) {
+    this.hasWheels = hasWheels;
+    this.name = name;
+  }
   move() {
-    console.log(`${this.name} is moving`)
+    console.log(`${this.name} is moving`);
   }
   stop() {
-    console.log(`${this.name} stopped`)
+    console.log(`${this.name} stopped`);
   }
 }
 
-class Ship {
-  name: 'Argo',
-  startMachine() {
-    console.log(`${this.name} lifting anchor up`);
-    this.move();
+class Ship extends Vehicle {
+  constructor(name, hasWheels) {
+    super(name, false);
+    this.speed = speed;
   }
-  stopMachine() {
-    this.stop();
+  move() {
+    console.log(`${this.name} lifting anchor up`);
+    super.move();
+  }
+  stop() {
+    super.stop();
     console.log(`${this.name} lifting anchor down`);
   }
-  __proto__: vehicle
 }
 
-export { vehicle, ship }
+export { vehicle, ship };

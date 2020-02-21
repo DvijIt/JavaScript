@@ -1,13 +1,17 @@
-const user = {
-  firstName: "Lohn",
-  lastName: "Doe",
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-  set fullName(value) {
-    const [firstName, lastName] = value.split(" ");
-    this.firstName = firstName;
-    this.lastName = lastName;
+class Wallet {
+  _balance = 0;
+
+  get_balance() {
+    return this._balance;
   }
-};
-export default user
+  deposit(amount) {
+    this._balance += amount;
+  }
+  withdraw(amount) {
+    if(amount > this._balance) {
+      console.log('No enougth funds');
+      return false;
+    }
+    this._balance -= amount;
+  }
+}
