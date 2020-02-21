@@ -12,7 +12,8 @@ class Vehicle {
 }
 
 class Ship extends Vehicle {
-  constructor(name, numberOfWheels) {
+  name = 'Argo';
+  constructor(name, numberOfWheels, maxSpeed) {
     super(name, false);
     this.maxSpeed = maxSpeed;
   }
