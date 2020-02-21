@@ -11,10 +11,10 @@ const vehicle = {
 const ship = {
   startMachine() {
     console.log(`${this.name} lifting anchor up`);
-    this.move();
+    move();
   },
   startMachine() {
-    this.stop();
+    stop();
     console.log(`${this.name} lifting anchor down`);
   },
   __proto__: vehicle
