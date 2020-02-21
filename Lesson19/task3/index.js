@@ -1,5 +1,13 @@
-function sumOfSquares() {
-  return [...arguments].reduce((acc, el) => acc + Math.pow(el, 2), 0)
+const user = {
+  firstName: "Lohn",
+  lastName: "Doe",
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  setFullName(value) {
+    const [firstName, lastName] = value.split(" ");
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 };
-
-export {sumOfSquares};
+export default user
