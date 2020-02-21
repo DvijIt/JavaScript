@@ -1,6 +1,6 @@
 class Vehicle {
   constructor(name, numberOfWheels) {
-    this.hasWheels = numberOfWheels;
+    this.numberOfWheels = numberOfWheels;
     this.name = name;
   }
   move() {
@@ -14,7 +14,7 @@ class Vehicle {
 class Ship extends Vehicle {
   constructor(name, numberOfWheels) {
     super(name, false);
-    this.speed = maxSpeed;
+    this.maxSpeed = maxSpeed;
   }
   move() {
     console.log(`${this.name} lifting anchor up`);
@@ -26,4 +26,4 @@ class Ship extends Vehicle {
   }
 }
 
-export { vehicle, ship };
+export { Vehicle, Ship };
