@@ -1,7 +1,7 @@
 class Wallet {
   _balance = 0;
 
-  get_balance() {
+  getBalance() {
     return this._balance;
   }
   deposit(amount) {
