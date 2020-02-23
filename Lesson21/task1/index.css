@@ -20,9 +20,11 @@ html {
   margin-top: 32px;
   border-radius: 8px;
 }
+
 .todo-header {
   display: flex;
 }
+
 .list {
   margin: 0;
   padding: 0;
@@ -36,13 +38,16 @@ html {
   padding: 8px;
   border-radius: 8px;
 }
+
 .list__item-done {
   text-decoration: line-through;
   opacity: .7;
 }
+
 .list__item-checkbox {
   margin-right: 8px;
 }
+
 .task-input {
   width: 504px;
   height: 32px;
