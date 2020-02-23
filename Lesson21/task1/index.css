@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.todo-title {
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.todo-list {
+  max-width: 600px;
+  background-color: coral;
+  padding: 8px;
+  margin: 0 auto;
+  margin-top: 32px;
+  border-radius: 8px;
+}
+.todo-header {
+  display: flex;
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list__item {
+  height: 40px;
+  background-color: wheat;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 8px;
+}
+.list__item-done {
+  text-decoration: line-through;
+  opacity: .7;
+}
+.list__item-checkbox {
+  margin-right: 8px;
+}
+.task-input {
+  width: 504px;
+  height: 32px;
+  border-radius: 8px;
+  border: 3px solid #ccc;
+}
+
+.task-btn {
+  text-align: center;
+  height: 32px;
+  min-width: 64px;
+  border-radius: 8px;
+  margin-left: 16px;
+  border: 3px solid #ccc;
+}
