@@ -1,56 +1,68 @@
-const tasks = [
-  { text: "Buy milk", done: false },
-  { text: "Pick up Tom from airport", done: false },
-  { text: "Visit party", done: false },
-  { text: "Visit doctor", done: true },
-  { text: "Buy meat", done: true }
-];
-const listElem = document.querySelector(".list");
-const taskInput = document.querySelector(".task-input");
-const taskCreateBtn = document.querySelector(".task-create-btn");
+const generateNumberRange = (from, to) => {
+  const result = [];
 
-const renderListItems = listItems => {
-  const listItemsElems = listItems
-    .sort((a, b) => a.date - b.date)
-    .sort((a, b) => a.done - b.done)
-    .map(({ text, done }) => {
-      const listItemElem = document.createElement("li");
-      listItemElem.classList.add("list__item");
-      if (done) {
-        listItemElem.classList.add("list__item-done");
-      }
-      const checkboxElem = document.createElement("input");
-      checkboxElem.setAttribute("type", "checkbox");
-      checkboxElem.checked = done;
-      checkboxElem.classList.add("list__item-checkbox");
-      checkboxElem.addEventListener("click", event => {
-        const resultItem = tasks.find(
-          item => item.text === event.target.parentNode.innerText
-        );
-        resultItem.done = event.target.checked;
-        listElem.innerHTML = "";
-        renderListItems(tasks);
-      });
-
-      listItemElem.append(checkboxElem, text);
-
-      return listItemElem;
-    });
-  listElem.append(...listItemsElems);
+  for (let i = from; i <= to; i++) {
+    result.push(i);
+  }
+  return result;
+};
+const getLineSeats = () => {
+  return generateNumberRange(1, 10)
+    .map(
+      seatNumber => `
+          <div 
+              class="sector__seat" 
+              data-seat-number="${seatNumber}">
+          </div>`
+    )
+    .join("");
 };
 
-renderListItems(tasks);
-
-const createElem = () => {
-  if (taskInput.value === "") return false;
-  tasks.push({
-    text: taskInput.value,
-    done: false,
-    date: new Date()
-  });
-  listElem.innerHTML = "";
-
-  renderListItems(tasks);
-  taskInput.value = "";
+const getSectorLines = () => {
+  const seatsString = getLineSeats();
+  return generateNumberRange(1, 10)
+    .map(
+      lineNumber => `
+          <div 
+              class="sector__line" 
+              data-line-number="${lineNumber}">
+          ${seatsString}</div>`
+    )
+    .join("");
 };
-taskCreateBtn.addEventListener("click", createElem);
+
+const arenaElem = document.querySelector(".arena");
+const renderArena = () => {
+  const linesString = getSectorLines();
+
+  const sectorsString = generateNumberRange(1, 3)
+    .map(
+      sectorNumber => `
+          <div 
+              class="sector" 
+              data-sector-number="${sectorNumber}">
+          ${linesString}</div>`
+    )
+    .join("");
+
+  arenaElem.innerHTML = sectorsString;
+};
+
+const onSeatSelect = event => {
+  const isSeat = event.target.classList.contains("sector__seat");
+  if (!isSeat) {
+    return;
+  }
+
+  const seatNumber = event.target.dataset.seatNumber;
+  const lineNumber = event.target.closest(".sector__line").dataset.lineNumber;
+  const sectorNumber = event.target.closest(".sector").dataset.sectorNumber;
+
+  const selectedSeatElem = document.querySelector(".board__selected-seat");
+
+  selectedSeatElem.textContent = `S ${sectorNumber} - L ${lineNumber} - S ${seatNumber}`;
+};
+
+arenaElem.addEventListener("click", onSeatSelect);
+
+renderArena();

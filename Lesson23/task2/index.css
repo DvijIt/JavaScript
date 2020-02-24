@@ -2,64 +2,51 @@
   box-sizing: border-box;
 }
 
-html {
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.todo-title {
-  font-size: 24px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.todo-list {
-  max-width: 600px;
-  background-color: coral;
-  padding: 8px;
-  margin: 0 auto;
-  margin-top: 32px;
-  border-radius: 8px;
-}
-
-.todo-header {
+.arena {
   display: flex;
 }
 
-.list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.sector {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+  background-color: coral;
 }
 
-.list__item {
-  height: 40px;
-  background-color: wheat;
-  margin-top: 8px;
-  padding: 8px;
+.sector__line {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 20px;
+  width: 200px;
+}
+
+.sector__seat {
+  height: 16px;
+  width: 16px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  cursor: pointer;
+  background-color: aqua;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  width: 200px;
   border-radius: 8px;
-}
-
-.list__item-done {
-  text-decoration: line-through;
-  opacity: .7;
-}
-
-.list__item-checkbox {
-  margin-right: 8px;
-}
-
-.task-input {
-  width: 504px;
-  height: 32px;
-  border-radius: 8px;
-  border: 3px solid #ccc;
-}
-
-.task-create-btn {
-  text-align: center;
-  height: 32px;
-  min-width: 64px;
-  border-radius: 8px;
-  margin-left: 16px;
-  border: 3px solid #ccc;
+  font-size: 18px;
+  background-color: #daa520;
+  color: white;
+  text-transform: uppercase;
 }
