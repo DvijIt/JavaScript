@@ -22,4 +22,4 @@ const studentsBirthDays = students => {
   Object.keys(monthBirthDay).filter(item => monthBirthDay[item].length > 0 ? true : delete monthBirthDay[item])
   return monthBirthDay
 };
-console.log(studentsBirthDays(students))
+export { studentsBirthDays };
