@@ -5,21 +5,23 @@ students = [
   { name: "John", birthDate: "05/23/2010" },
   { name: "Ann", birthDate: "05/21/2010" }
 ];
+
+const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 const studentsBirthDays = students => {
-  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const studentsArr = students.slice('')
 
-  const monthBirthDay = {}
+  const result = {}
 
   month.forEach(item => {
-    monthBirthDay[item] = [];
+    result[item] = [];
   });
   studentsArr.sort((a, b) => new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate())
   .map(item => {
     const monthsName = month[new Date(item.birthDate).getMonth()];
-    monthBirthDay[monthsName].push(item.name);
+    result[monthsName].push(item.name);
   });
-  Object.keys(monthBirthDay).filter(item => monthBirthDay[item].length > 0 ? true : delete monthBirthDay[item])
-  return monthBirthDay
+  Object.keys(result).filter(item => result[item].length > 0 ? true : delete result[item])
+  return result
 };
 export { studentsBirthDays };
