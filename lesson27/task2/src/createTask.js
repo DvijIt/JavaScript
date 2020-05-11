@@ -17,7 +17,6 @@ const createTask = () => {
   });
 
   setItem('tasks', tasksList)
-  console.log(tasksList);
   
   renderListItems();
   taskInput.value = "";
