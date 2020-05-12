@@ -6,7 +6,7 @@ const taskCreateBtn = document.querySelector(".task-create-btn");
 
 const createTask = () => {
 
-  const tasksList = getItem('tasks') || [];
+  const tasksList = getItem('tasksList') || [];
 
   if (taskInput.value === "") return false;
 
@@ -16,7 +16,7 @@ const createTask = () => {
     date: new Date().toString()
   });
 
-  setItem('tasks', tasksList)
+  setItem('tasksList', tasksList)
   
   renderListItems();
   taskInput.value = "";

@@ -6,7 +6,7 @@ import {} from './updateTask.js'
 document.addEventListener('DOMContentLoaded', renderListItems)
 
 const onStorageChange = e => {
-  if (e.key === "tasks") renderListItems()
+  if (e.key === "tasksList") renderListItems()
 }
 
 window.addEventListener('storage', onStorageChange);

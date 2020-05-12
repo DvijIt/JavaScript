@@ -1,7 +1,7 @@
 import {getItem} from './storage.js'
 
 export const renderListItems = () => {
-  const taskList = getItem('tasks') || [];
+  const taskList = getItem('tasksList') || [];
   const listElem = document.querySelector(".list");
   const listItemsElems = taskList
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

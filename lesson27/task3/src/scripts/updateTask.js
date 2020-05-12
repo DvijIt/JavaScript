@@ -4,7 +4,7 @@ const listItem = document.querySelector('.list');
 
 export const changeStatus = e => {
 
-  const tasksList = getItem('tasks') || [];
+  const tasksList = getItem('tasksList') || [];
 
   const newTasksList = tasksList
     .map(item => {
@@ -12,7 +12,7 @@ export const changeStatus = e => {
       return item
     })
 
-  setItem('tasks', newTasksList)
+  setItem('tasksList', newTasksList)
 
   renderListItems();
 }
