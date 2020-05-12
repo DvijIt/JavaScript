@@ -6,13 +6,13 @@ export const changeStatus = e => {
 
   const tasksList = getItem('tasksList') || [];
 
-  const newTasksList = tasksList
+  tasksList
     .map(item => {
       if (item.text === e.target.parentNode.innerText) item.done = e.target.checked;
       return item
     })
 
-  setItem('tasksList', newTasksList)
+  setItem('tasksList', tasksList)
 
   renderListItems();
 }
