@@ -1,6 +1,6 @@
 
 
-const calc = initValue => {
+export const calc = initValue => {
     let result = initValue;
 
     const calculator = {
