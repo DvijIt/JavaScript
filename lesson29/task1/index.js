@@ -13,17 +13,3 @@ export const addImage = (imgSrc, callback) => {
     imgElem.addEventListener('load', onImageLoaded)
     imgElem.addEventListener('error', () => callback('Image load failed'))
 }
-
-const onImageLoaded = (error, data) => {
-    if (error) {
-        return
-    }
-    const { width, height } = data;
-
-    const spanSize = document.querySelector('.size');
-    spanSize.textContent = `${width} x ${height}`
-}
-
-const imgSrc = 'https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg'
-
-addImage(imgSrc, onImageLoaded)
