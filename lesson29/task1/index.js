@@ -1,22 +1,21 @@
 export const addImage = (imgSrc, callback) => {
-    const newImg = document.createElement('img')
-    newImg.setAttribute('alt', 'My image!')
-    newImg.src = imgSrc;
-    const containerElem = document.querySelector('.page')
-    containerElem.append(newImg)
+    const imgElem = document.createElement('img');
+    imgElem.setAttribute('alt', 'My Photo');
+    imgElem.src = imgSrc;
+    const containerElem = document.querySelector('.page');
+    containerElem.append(imgElem);
 
     const onImageLoaded = () => {
-        const { width, height } = newImg;
+        const { width, height } = imgElem;
         callback(null, { width, height })
     }
 
-    newImg.addEventListener('load', onImageLoaded)
-    newImg.addEventListener('error', () => callback('Image load failed'))
+    imgElem.addEventListener('load', onImageLoaded)
+    imgElem.addEventListener('error', () => callback('Image load failed'))
 }
 
 const onImageLoaded = (error, data) => {
     if (error) {
-        console.log(error)
         return
     }
     const { width, height } = data;
