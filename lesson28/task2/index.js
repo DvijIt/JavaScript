@@ -1,34 +1,31 @@
-const counterElem = document.querySelector('.counter');
-const counterValueElem = document.querySelector('.counter__value');
+const favorit = ['id-6', 'id-17'];
 
+const tree = {
+    id: 'id-1',
+    name: 'Product',
+    nodes: [{
+            id: 'id-2',
+            name: 'Food',
+            nodes: [{
+                id: 'id-6',
+                name: 'Drink',
+                nodes: []
+            }]
+        },
+        {
+            id: 'id-17',
+            name: 'Venicle',
+            nodes: []
+        }
+    ]
+}
 
-const onCounterChange = e => {
-    const isButton = event.target.classList.contains('counter__button');
-    if (!isButton) {
-        return;
+export const markFavorites = (tree, favorit) => {
+    const isFavorite = favorit.includes(tree.id);
+
+    return {
+        ...tree,
+        isFavorite,
+        nodes: tree.nodes.map(childNode => markFavorites(childNode, favorit))
     }
-
-
-    const action = e.target.dataset.action;
-
-    const oldValue = +counterValueElem.textContent;
-    const newValue = action === 'increase' ? oldValue + 1 : oldValue - 1;
-
-    localStorage.setItem('counterValue', newValue);
-    counterValueElem.textContent = newValue
-}
-counterElem.addEventListener('click', onCounterChange);
-
-
-const onStorageChange = e => {
-    counterValueElem.textContent = e.newValue;
-}
-
-window.addEventListener('storage', onStorageChange)
-
-
-const onDocumentLoaded = () => {
-    counterValueElem.textContent = localStorage.getItem('counterValue') || 0;
-}
-
-document.addEventListener('DOMContentLoaded', onDocumentLoaded);
+};
