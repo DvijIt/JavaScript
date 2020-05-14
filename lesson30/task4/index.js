@@ -1,16 +1,19 @@
-export const requestUserData = (userId, callback) => {
-  setTimeout(()=> {
-    if (userId === 'broken') {
-      callback(null, 'Failed to load user data');
-      return;
-    };
-    
-    callback({
-      userId,
-      email: `${userId}@example.com`
-    });
-  }, Math.floor(Math.random() * 3 + 1) * 1000);
-  
-}
+/*
+ * failedPromise должен зареджектить ошибку new Error('Oops, error!');
+ * Ответьте себе на вопрос, какой тип данных имеет переменная userDataPromise
+ */
 
-// console.log(requestUserData('user777'));
+const failedPromise = new Promise((resolve, reject) => {
+  /* ...code here */
+  reject(new Error('Oops, error!'))
+});
+
+/*
+* выведите в консоль ошибку в ф-ции onError
+*/
+
+failedPromise.catch(function onError(error) {
+  /* ...code here */
+  console.log(error);
+  
+});
