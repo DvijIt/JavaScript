@@ -33,7 +33,7 @@ export const addImageV2 = (imgUrl) => {
 
 let imgUrl = 'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg'
 
-let result = addImageV2(url)
+let result = addImageV2(imgUrl)
 result
     .then(data => console.log(data)) // { width: 200, height: 100 }
     .catch(error => console.log(error)); // 'Image load failed'
