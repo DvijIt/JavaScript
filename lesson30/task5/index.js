@@ -1,43 +1,30 @@
-// export const addImage = (url, callback) => {
-//     const img = document.createElement('img');
-//     img.setAttribute('alt', 'User avatar');
-//     img.src = url;
+export const addImage = (url, callback) => {
+    const img = document.createElement('img');
+    img.setAttribute('alt', 'User avatar');
+    img.src = url;
 
+    const pageElem = document.querySelector('.page');
+    pageElem.append(img);
 
-//     const pageElem = document.querySelector('.page');
-//     pageElem.append(img);
-    
-//     const onImageLoaded = () => {
-//         const { width, height } = img;
-//         callback(null, { width, height });
-//     }
-    
-//     const onImageLoadError = () => callback('Image load failed');
-    
-//     img.addEventListener('load', onImageLoaded);
-    
-//     img.addEventListener('error', onImageLoadError);
-// };
+    const onImageLoaded = () => {
+        const { width, height } = img;
+        callback(null, { width, height });
+    }
+
+    const onImageLoadError = () => callback('Image load failed');
+
+    img.addEventListener('load', onImageLoaded);
+
+    img.addEventListener('error', onImageLoadError);
+};
 
 export const addImageV2 = (url) => {
     let p = new Promise((resolve, reject) => {
-        const img = document.createElement('img');
-        img.setAttribute('alt', 'User avatar');
-        img.src = url;
-    
-        const pageElem = document.querySelector('.page');
-        pageElem.append(img);
-        
-        const onImageLoaded = () => {
-            const { width, height } = img;
-            resolve({ width, height });
-        }
-        
-        const onImageLoadError = () => reject(new Error('Image load failed'));
-        
-        img.addEventListener('load', onImageLoaded);
-        
-        img.addEventListener('error', onImageLoadError);
+        callback((error, data) => {
+         if (error) {reject(error); return}
+         resolve(data)   
+        })
+        addImage(imgUrl, callback)
     })
 
     return p;
