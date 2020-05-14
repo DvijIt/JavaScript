@@ -1,9 +1,16 @@
-const add2 = value => value + 2;
-const square = value => value * value; 
-const half = value => value / 2;
-
-export const compose = (...funcs) => value => {
-  return funcs.reduce((acc, func) => func(acc), value)
+export const requestUserData = (userId, callback) => {
+  setTimeout(()=> {
+    if (userId === 'broken') {
+      callback(null, 'Failed to load user data');
+      return;
+    };
+    
+    callback({
+      userId,
+      email: `${userId}@example.com`
+    });
+  }, Math.floor(Math.random() * 3 + 1) * 1000);
+  
 }
 
-const superFunc = compose(add2, square, half);
+// console.log(requestUserData('user777'));
