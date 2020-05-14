@@ -18,19 +18,20 @@ export const addImage = (url, callback) => {
     img.addEventListener('error', onImageLoadError);
 };
 
-export const addImageV2 = (url) => {
+export const addImageV2 = (imgUrl) => {
     let p = new Promise((resolve, reject) => {
-        callback((error, data) => {
-         if (error) {reject(error); return}
-         resolve(data)   
+        addImage(imgUrl, (error, data) => {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve(data);
         })
-        addImage(imgUrl, callback)
-    })
+    });
+    return p
+}
 
-    return p;
-};
-
-let url = 'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg'
+let imgUrl = 'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg'
 
 let result = addImageV2(url)
 result
