@@ -1,31 +1,12 @@
-const favorit = ['id-6', 'id-17'];
+const pinger = (num, period) => {
+    let i = num;
+    console.log('Ping');
+    const interval = setInterval(() => {
+        if (--i > 0) console.log('Ping');
+        else clearInterval(interval)
+    }, period)
 
-const tree = {
-    id: 'id-1',
-    name: 'Product',
-    nodes: [{
-            id: 'id-2',
-            name: 'Food',
-            nodes: [{
-                id: 'id-6',
-                name: 'Drink',
-                nodes: []
-            }]
-        },
-        {
-            id: 'id-17',
-            name: 'Venicle',
-            nodes: []
-        }
-    ]
+    // setTimeout(() => {clearInterval(interval)}, num * period)
 }
 
-export const markFavorites = (tree, favorit) => {
-    const isFavorite = favorit.includes(tree.id);
-
-    return {
-        ...tree,
-        isFavorite,
-        nodes: tree.nodes.map(childNode => markFavorites(childNode, favorit))
-    }
-};
+export {pinger}
