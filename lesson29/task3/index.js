@@ -1,5 +1,7 @@
-export const mult = a => b => a * b;
-
-export const twice = a => mult(a)(2)
-
-export const triple = a => mult(a)(3)
+export const printing = () => {
+  console.log(1);
+  setTimeout(function() { console.log(5); }, 1000);
+  console.log(2);
+  setTimeout(function() { console.log(4); }, 0);
+  console.log(3);
+};
