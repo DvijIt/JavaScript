@@ -1,5 +1,5 @@
-export const delay = (delay, callback, context, arg1, arg2, arg3) => {
+export const delay = (delay, callback, context, ...args) => {
     setTimeout(() => {
-        callback.call(context)
+        callback.call(context, ...args)
     }, delay)
 }
