@@ -1,28 +1,22 @@
-export const addImage = imgSrc => {
-    let p = new Promise((resolve, regect) => {
 
-        const imgElem = document.createElement('img');
-        imgElem.setAttribute('alt', 'My Photo');
-        imgElem.src = imgSrc;
-        const containerElem = document.querySelector('.page');
-        containerElem.append(imgElem);
-    
-        const onImageLoaded = () => {
-            const { width, height } = imgElem;
-            resolve({ width, height })
+export const requestUserData = (userId) => {
+    const request = new Promise((resolve, reject) => {
+        if (userId === 'broken') {
+            setTimeout(() => {
+                reject(new Error('User not found'));
+                return;
+            }, 500)
+        } else {
+            setTimeout(() => {
+
+                resolve({
+                    name: 'John',
+                    age: 17,
+                    userId,
+                    email: `${userId}@example.com`,
+                });
+            }, 1000);
         }
-    
-        imgElem.addEventListener('load', onImageLoaded)
-        imgElem.addEventListener('error', () => regect(new Error('Image load failed')))
-
     })
-    return p;
-}
-
-let imgScr = 'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg'
-
-let result = addImage(imgScr)
-// result.then(data => {
-//     console.log(data);
-// })
-
+    return request
+};
