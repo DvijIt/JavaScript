@@ -10,6 +10,6 @@ const asyncNum3 = getValueWithDelay(10, 2000)
 
 const getSum = numbers => numbers.filter(value => !isNaN(value)).reduce((acc, num) => acc + +num, 0)
 
-export const asyncSum = (...asyncNumbs) => Promise.all(asyncNumbs).then(numbers => getSum(numbers)).catch(() => Promise.reject(new Error('Can\'t calculate')))
+const asyncSum = (...asyncNumbs) => Promise.all(asyncNumbs).then(numbers => getSum(numbers)).catch(() => Promise.reject(new Error('Can\'t calculate')))
 
-// asyncSum(asyncNum1, asyncNum2, asyncNum3).then(result => console.log(result))
+asyncSum(asyncNum1, asyncNum2, asyncNum3).then(result => console.log(result))
