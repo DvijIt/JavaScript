@@ -3,7 +3,7 @@
  */
 
 /* ...code here */
-const makePromise = num => Promise.resolve(num)
+export const makePromise = num => Promise.resolve(num)
 /*
  * пример использования
  */
