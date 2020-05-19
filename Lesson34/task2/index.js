@@ -7,37 +7,24 @@ export const getUsersList = () => {
 export const getUserById = userId => {
   return fetch(`${baseUrl}/${userId}`).then(responce => responce.json());
 }
-const newUserData = {
-  email: 'cool@email.com',
-  firstName: 'Iron',
-  lastName: 'Man',
-  age: 42,
-};
-export const createUser = userData => {
-  userData = newUserData;
+
+export const createUser = newUserData => {
   return fetch(baseUrl, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json;charset=utf-8'
     },
-    body: JSON.stringify(userData)
+    body: JSON.stringify(newUserData)
   })
 }
 
-const updatedUserData = {
-  email: 'new@email.com',
-  firstName: 'John',
-  lastName: 'Doe',
-  age: 17,
-};
-export const updateUser = (userId, updateUserData) => {
-  updateUserData = updatedUserData;
+export const updateUser = (userId, updatedUserData) => {
   return fetch(`${baseUrl}/${userId}`, {
     method: 'PUT',
     headers: {
       'Content-type': 'application/json;charset=utf-8'
     },
-    body: JSON.stringify(updateUserData)
+    body: JSON.stringify(updatedUserData)
   })
 }
 
