@@ -15,7 +15,7 @@ export const createUser = userData => {
       'Content-type': 'application/json;charset=utf-8'
     },
     body: JSON.stringify(userData)
-  })
+  }).then(responce => responce.json());
 }
 
 export const updateUser = (userId, updateUserData) => {
@@ -25,7 +25,7 @@ export const updateUser = (userId, updateUserData) => {
       'Content-type': 'application/json;charset=utf-8'
     },
     body: JSON.stringify(updateUserData)
-  })
+  }).then(responce => responce.json());
 }
 
 export const deleteUser = userId => {
