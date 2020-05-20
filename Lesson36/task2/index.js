@@ -27,7 +27,7 @@ const onSearchUser = async () => {
         renderRepos(reposList);
     }
     catch (err){
-        err => alert(err.message);
+        alert(err.message);
     }
     finally {
         hideSpinner();
