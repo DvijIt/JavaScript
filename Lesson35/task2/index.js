@@ -1,36 +1,24 @@
-const baseUrl = 'https://5ec377e28ebdcc0016a5a8e4.mockapi.io/api/v1/users'
+const successRequest = Promise.resolve({ name: "Tom" });
 
-export const getUsersList = () => {
-  return fetch(baseUrl).then(responce => responce.json());
-}
+successRequest
+    .then(function onSuccess1(data) {
+        throw new Error('Errow with data')
+    })
+    .catch(function onError1(error) {
+        console.error("onError1", error.message);
+    })
 
-export const getUserById = userId => {
-  return fetch(`${baseUrl}/${userId}`).then(responce => responce.json());
-}
 
-export const createUser = newUserData => {
-  return fetch(baseUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8'
-    },
-    body: JSON.stringify(newUserData)
-  })
-}
+const failRequest = Promise.reject(new Error("Something went wrong"));
 
-export const updateUser = (userId, updatedUserData) => {
-  return fetch(`${baseUrl}/${userId}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8'
-    },
-    body: JSON.stringify(updatedUserData)
-  })
-}
-
-export const deleteUser = userId => {
-  return fetch(`${baseUrl}/${userId}`, {
-    method: 'DELETE',
-  });
-}
-    
+failRequest
+    .catch(function onError2(error) {
+        console.error("onError2", error.message);
+        throw new Error('Server error');
+    })
+    .then(function onSuccess2(data) {
+        console.log("onSuccess2", data);
+    })
+    .catch(function onError3(error) {
+        console.error("onError3", error.message);
+    });
